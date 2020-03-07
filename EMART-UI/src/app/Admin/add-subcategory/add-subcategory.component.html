@@ -1,0 +1,52 @@
+<div class="container">
+<br><br><br><br>
+<div class='bold-line'></div>
+      <div class='window'>
+        <div class='overlay'></div>
+        <div class='content'>
+          <div class='welcome'>Add SubCategory</div>
+          <form [formGroup]="subcategoryForm" (ngSubmit)="onSubmit()">
+            <div class="input-fields">
+             <label>Select Category</label>
+             <select id="s1" formControlName="CategoryName" class="form-control  input-line full-width" >
+              <option *ngFor="let cat of categorylist" [value]="cat.categoryId">{{cat.categoryName}}</option>
+              </select>
+              <div *ngIf="submitted && f.CategoryName.errors" class="invalid-feedback">
+              </div>
+     
+                 
+              <label>SubcategoryName</label>
+              <input type="text" formControlName="SubcategoryName" class="form-control  input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.SubcategoryName.errors }" />
+              <div *ngIf="submitted && f.SubcategoryName.errors" class="invalid-feedback">
+                  <div *ngIf="f.SubcategoryName.errors.required"> Name is required</div>
+                  
+              </div>
+              <label>GST</label>
+             
+              <input type="text" formControlName="GST" class="form-control input-line full-width " [ngClass]="{ 'is-invalid': submitted && f.GST.errors }" />
+                <div *ngIf="submitted && f.GST.errors" class="invalid-feedback">
+                    <div *ngIf="f.GST.errors.required">GST is required</div>
+                    
+                </div>
+                <label>BriefDetails</label>
+                 
+                 <input type="text" formControlName="BriefDetails" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.BriefDetails.errors }" />
+                 <div *ngIf="submitted && f.BriefDetails.errors" class="invalid-feedback">
+                   <div *ngIf="f.BriefDetails.errors.required">Brief Details is required</div>
+                 </div>
+                
+            </div>
+              <br><br>
+            <div class="text-center">
+              <button class="ghost-round full-width " >Add</button>
+              <button class="ghost-round full-width " type="button" (click)="Delete()" id="b2">Delete</button>
+              <button class="ghost-round full-width " type="reset" (click)="onReset()" id="b2">Reset</button>
+            </div>
+                 
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+

@@ -1,0 +1,106 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  </head>
+  <div class="container-fluid">
+  <div class="image">
+    
+    <div class="row">
+        <nav class="navbar navbar-expand-lg ">
+       <div class="collapse navbar-collapse" id="navbarText">
+         <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+          <a class="nav-link" [routerLink]="['/home']"><span class="glyphicon glyphicon-home"></span>Home</a>
+          </li>
+           <li class="nav-item ">
+             <a class="nav-link" href="#"><span class="glyphicon glyphicon-user"></span>  About</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#"><span class="glyphicon glyphicon-earphone"></span>  Contact us</a>
+           </li>  
+          </ul>
+        </div>
+           <ul class="navbar-nav ml-auto">
+           <li class="nav-item ">
+               <a class="nav-link" [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+             </li>
+          </ul>
+          </nav>
+        </div>
+     
+  
+   <div class="row">
+    <div class="col-lg-7">
+      <div class="sidebar ">
+        <a href="#"><span class="glyphicon glyphicon-user"></span>  ABOUT</a><br><br>
+        <a href="#"><span class="glyphicon glyphicon-earphone"></span>  CONTACT US</a><br><br>
+      </div>
+     </div>
+    <div class="col-lg-5">
+      <br><br><br><br>
+    <div class='bold-line'></div>
+      <div class='window'>
+        <div class='overlay'></div>
+        <div class='content'>
+          <div class='welcome'>Sign Up</div>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="input-fields">
+                <label>NAME</label>
+                <input type="text" formControlName="name"placeholder="Enter Name" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+               <div *ngIf="f.name.errors.required">Name is required</div>
+               </div> 
+              <label>Password</label>
+              <input type="password" formControlName="pwd" placeholder="Enter Password" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.pwd.errors }" />
+                <div *ngIf="submitted && f.pwd.errors" class="invalid-feedback">
+                  <div *ngIf="f.pwd.errors.required">Password is required</div>
+                </div>
+              <label>EMAIL</label>
+                <input type="text" formControlName="email" placeholder="Enter Email" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                   <div *ngIf="f.email.errors.required">Email is required</div>
+                </div>
+                <label>MOBILE</label>
+                <input type="text" formControlName="phn" placeholder="Enter Mobile Number" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.phn.errors }" />
+                <div *ngIf="submitted && f.phn.errors" class="invalid-feedback">
+               <div *ngIf="f.phn.errors.required">Mobile Number is required</div>
+               </div>
+               <label>Company Name</label>
+                <input type="text" formControlName="cmpn" placeholder="Enter Company Name" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.cmpn.errors }" />
+                <div *ngIf="submitted && f.cmpn.errors" class="invalid-feedback">
+               <div *ngIf="f.cmpn.errors.required">Company Name is required</div>
+               </div>
+               <label>Address</label>
+                <input type="text" formControlName="add" placeholder="Enter Company Name" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.add.errors }" />
+                <div *ngIf="submitted && f.add.errors" class="invalid-feedback">
+               <div *ngIf="f.add.errors.required">Address is required</div>
+               </div>
+               <label>GSTIN</label>
+                <input type="text" formControlName="gst" placeholder="Enter GstIn" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.gst.errors }" />
+                <div *ngIf="submitted && f.gst.errors" class="invalid-feedback">
+               </div>
+               <label>Brief(optional)</label>
+                <input type="text" formControlName="bri"  placeholder="Enter Company Name" class="form-control input-line full-width"/>
+                <label>Website(optional)</label>
+                <input type="text" formControlName="web"  placeholder="Enter Website Name" class="form-control input-line full-width" />
+            </div>
+              <br><br>
+            <div class="text-center">
+              <button class="ghost-round full-width " id=b1>Sign Up</button>
+              <button class="ghost-round full-width " type="reset" (click)="onReset()" id=b2>Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+     </div>
+  </div> 
+  </div>
+  </div>
+  

@@ -1,0 +1,20 @@
+#i1{
+height:50%;
+ /* width:50%; */
+align-items: center;
+}
+/* #c1{
+    width: 50%;
+} */
+#s1{
+    align-content: center;
+}
+.card{
+width: 18rem; 
+/* width:60%; */
+    background-color: rgba(185, 163, 236, 0.64);
+}
+.container{
+    align-content: center;
+    width:60%;
+}

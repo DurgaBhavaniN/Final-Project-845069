@@ -1,0 +1,33 @@
+<br><br><br><br>
+<div class="container">
+   
+<form [formGroup]="buyerform" >
+    <div class="text-center" id="s1">
+        <input type="text" class="mr-sm-2" aria-label="Search" formControlName="itemName">&nbsp;
+        <button class="btn btn-primary" type="submit" (click)="Search()">Search</button>
+    </div>
+    
+    </form>
+
+</div>
+<br><br><br>
+    
+    <div class="container" id="c1">
+        <div class="row">
+        <div class="card-deck" *ngFor="let item of itemlist">
+        <div class="card">
+          <img  src="assets/images/{{item.image}}" alt="{{item.itemName}}" height="100px" align-items="center" width="190px">
+          <div class="card-body">
+              <!-- <img src="{{assets/images/item.image}}"><br> -->
+            ItemName:{{item.itemName}}<br><br>
+            Price: {{item.price}}<br/><br>
+            Description:{{item.description}}<br/><br/>  
+            <button type="button" class="btn btn-primary" (click)="Buy(item)">Buy </button>&nbsp;
+            <button type="button" class="btn btn-primary">AddToCart</button> 
+            </div>
+            </div>
+            <br>
+        </div>
+        </div>
+        </div>
+        

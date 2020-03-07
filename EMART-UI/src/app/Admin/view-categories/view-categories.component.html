@@ -1,0 +1,49 @@
+<br><br><br><br><br><br><br>
+<table class="table table-bordered">
+    <tr>
+        <th>CategoryId</th>
+        <th>CategoryName</th>
+        <th>BriefDetails</th>
+        </tr>
+        <tr *ngFor="let item of list">
+            <td>{{item.categoryId}}</td>
+            <td>{{item.categoryName}}</td>
+            <td>{{item.briefDetails}}</td>
+            <td><button class="btn btn-primary" (click)="Edit(item.categoryId)" data-toggle="modal" data-target="#myModal">Edit</button></td>
+        </tr>
+        </table>
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog ">
+              <div class='bold-line'></div>
+              <div class='window'>
+                <div class='overlay'></div>
+                   <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                       <div class='welcome'>Edit Category</div>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                      
+                     <div class="modal-body">
+                        <form [formGroup]="viewcatform" >
+                              <div class="input-fields">
+                                
+                                <label>CategoryId</label>
+                                <input type="text" formControlName="categoryId"  readonly class="form-control input-line full-width"/>
+                                <label>CategoryName</label>
+                                <input type="text" formControlName="categoryName"   class="form-control input-line full-width"/>  
+                                 <label>Description</label>
+                                <input type="text" formControlName="briefDetails" class="form-control input-line full-width"/>
+                                 </div>
+                        </form>
+                       </div>
+                
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="Update()" data-dismiss="modal">Save</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        

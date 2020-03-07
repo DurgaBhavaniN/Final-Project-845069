@@ -1,0 +1,91 @@
+#h1{
+  text-align: center;
+}#i1
+{
+  font-size: 25px;
+  color: black;
+}
+#i2
+{
+  font-size: 25px;
+  color:red;
+}
+.navbar {
+top:0px;
+width:100%;
+margin:0 auto;
+background-color:rgba(255,255,255,0.5);
+text-align: center;
+border-radius:63px;
+padding:0px;
+}
+.navbar ul li{
+list-style:none;
+display:inline-block;
+}
+.navbar ul li a{
+display: block;
+text-decoration: none;
+padding: 10px 50px;
+font-size:20px;
+text-transform: uppercase;
+font-weight:300;
+color:#323642;
+transition:background-color 0.5s ease;
+
+}
+nav ul li a:hover{
+background-color:rgba(255,255,255,0.5);
+}
+
+* {box-sizing: border-box;}
+
+.image {
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+
+background-image: url("src/assets/images/bg5.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+height:1300px;
+width:100%;
+}
+.sidebar {
+margin: 1;
+padding: 35px;
+top:71px;
+width: 250px;
+
+position: fixed;
+height: 100%;
+overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  padding-top: 50px;
+display: block;
+color: black;
+padding: 26px;
+font-size: 20px;
+text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+background-color: #4CAF50;
+color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+background-color:rgba(255,255,255,0.5);
+color: white;
+}
+.glyphicon-border{
+  border: 3px solid#001;
+  padding:15px;
+  
+  border-radius: 900px;
+  font-size:10px;
+}

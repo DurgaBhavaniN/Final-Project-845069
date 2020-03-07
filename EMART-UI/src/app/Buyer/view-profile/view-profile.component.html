@@ -1,0 +1,35 @@
+<div class='bold-line'></div>
+      <div class='window'>
+        <div class='overlay'></div>
+        <div class='content'>
+          <div class='welcome'>View Profile</div>
+          <form [formGroup]="viewprofileForm" (ngSubmit)="onSubmit()">
+            <div class="input-fields">
+              <label>ID</label>
+              <input type="text" formControlName="buyerId" placeholder="Enter ID" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.id.errors }" />
+                
+                <label>NAME</label>
+                <input type="text" formControlName="userName"placeholder="Enter Name" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                 
+              <label>Password</label>
+              <input type="password" formControlName="password" placeholder="Enter Password" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.pwd.errors }" />
+                
+              <label>EMAIL</label>
+                <input type="text" formControlName="emailId" placeholder="Enter Email" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                
+                <label>MOBILE</label>
+                <input type="text" formControlName="mobileNo" placeholder="Enter Mobile Number" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.phn.errors }" />
+                
+               <label>Date</label>
+                <input type="text" formControlName="createdDateTime" placeholder="Enter Date" class="form-control input-line full-width" />
+                
+            </div>
+              <br><br>
+            <div class="text-center">
+              
+              <button class="ghost-round full-width " type="button" (click)="EditProfile()" id=b2>Edit</button>
+              <button class="ghost-round full-width " type="reset" (click)="onReset()" id=b2>Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>

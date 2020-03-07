@@ -1,0 +1,73 @@
+<br><br><br><br>
+
+
+    <div class="container" id="c1">
+      <div class="row">
+        <div class="col-md-3" *ngFor="let item of list">
+      <!-- <div class="card-deck" *ngFor="let item of list"> -->
+      <div class="card">
+        <img class="card-img-top" src="assets/images/{{item.image}}" alt="{{item.itemName}}" height="100px" align-items="center" width="190px">
+        <div class="card-body">
+            <!-- <img src="{{assets/images/item.image}}"><br> -->
+          ItemName:{{item.itemName}}<br><br>
+          Price: {{item.price}}<br/><br>
+          Description:{{item.description}}<br/><br/>  
+          <button class="btn btn-danger" (click)="Delete(item.itemId)">Delete</button>  &nbsp;
+          <button class="btn btn-primary" (click)="Edit(item.itemId)" data-toggle="modal" data-target="#myModal">Edit</button> 
+          </div>
+          </div>
+          <br>
+      </div>
+      </div>
+      </div>
+ 
+  
+    
+      <!-- Trigger the modal with a button -->
+      <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+     -->
+      <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog ">
+          <div class='bold-line'></div>
+          <div class='window'>
+            <div class='overlay'></div>
+               <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                   <div class='welcome'>Edit Item</div>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                  
+                 <div class="modal-body">
+                    <form [formGroup]="viewitemsform" >
+                          <div class="input-fields">
+                            
+                            <label>ItemId</label>
+                            <input type="text" formControlName="itemId"  readonly class="form-control input-line full-width"/>
+                            <label>ItemName</label>
+                            <input type="text" formControlName="itemName"   class="form-control input-line full-width"/>  
+                            <label>Price</label>
+                            <input type="text" formControlName="price" class="form-control input-line full-width"/>
+                            <label>Description</label>
+                            <input type="text" formControlName="description" class="form-control input-line full-width"/>
+                            <label>Remarks</label>
+                            <input type="text" formControlName="remarks" class="form-control input-line full-width"/>
+                            <label>Image</label>
+                            <input type="file" formControlName="image" class="form-control input-line full-width"/>
+                          </div>
+                    </form>
+                   </div>
+            
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="Update()" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+ 
+    
+
+

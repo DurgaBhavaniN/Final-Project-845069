@@ -1,0 +1,29 @@
+
+<br><br><br><br>
+
+<div class="card md-3">
+    <h3 id="t1" class="card-header"></h3>
+    <div class="card-body ">
+        <form [formGroup]="buForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label> ID</label>
+                 <input type="text" formControlName="id" placeholder="Enter  ID" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id.errors }" />
+                 <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
+                <div *ngIf="f.id.errors.required"> ID is required</div>
+                </div>
+            </div>
+           <div class="form-group">
+               <label>Name</label>
+               <input type="text" formControlName="name"placeholder="Enter  Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+               <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+               <div *ngIf="f.name.errors.required"> Name is required</div>
+               </div>
+           </div>
+            <div class="text-center">  
+                <button class="btn btn-primary mr-1 " id=b1>Block</button>
+                <button class="btn btn-primary mr-1 " id=b1>UnBlock</button>
+                
+            </div>
+        </form>
+    </div>
+</div>
