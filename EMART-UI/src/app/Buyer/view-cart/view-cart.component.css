@@ -1,0 +1,19 @@
+.card{
+    background-color: rgba(223, 203, 215, 0.65);
+    width: 20rem; 
+}
+.card-title{
+    color:black;
+text-align: center;
+}
+.card-img{
+    align-items: center;
+    width: 195px;
+    height:100px;
+}
+.card-body{
+    color: black;
+}
+/* .container{
+    width:100%;
+} */

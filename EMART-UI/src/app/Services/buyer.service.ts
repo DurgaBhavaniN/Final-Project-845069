@@ -4,6 +4,7 @@ import {Observable} from "Rxjs";
 import { Buyer } from '../Models/buyer';
 import { Items } from '../Models/items';
 import { TransactionHistory } from '../Models/transaction-history';
+import { Cart } from '../Models/cart';
 
 const Requestheaders={headers:new HttpHeaders({
   'Content-Type':'application/json',
@@ -31,6 +32,18 @@ export class BuyerService {
   public BuyItem(obj:TransactionHistory):Observable<TransactionHistory[]>{
 
     return this.http.post<TransactionHistory[]>(this.url+'BuyItem',obj,Requestheaders);
+  }
+  public AddtoCart(cart:Cart):Observable<any>{
+
+    return this.http.post<any>(this.url+'AddtoCart',cart,Requestheaders);
+  }
+  public GetCartItems():Observable<any>
+  {
+    return this.http.get<any>(this.url+'GetCartItems',Requestheaders);
+  }
+  public RemoveCartItem(Id:string):Observable<any>
+  {
+    return this.http.delete<any>(this.url+'DeleteCartItems/'+Id,Requestheaders);
   }
 }
   

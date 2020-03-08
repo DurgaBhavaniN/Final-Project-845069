@@ -4,7 +4,8 @@
       <div class='window'>
         <div class='overlay'></div>
         <div class='content'>
-          <div class='welcome'>Add SubCategory</div>
+        <div class='welcome'>Add</div>
+          
           <form [formGroup]="subcategoryForm" (ngSubmit)="onSubmit()">
             <div class="input-fields">
              <label>Select Category</label>
@@ -15,7 +16,7 @@
               </div>
      
                  
-              <label>SubcategoryName</label>
+              <label>Subcategory Name</label>
               <input type="text" formControlName="SubcategoryName" class="form-control  input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.SubcategoryName.errors }" />
               <div *ngIf="submitted && f.SubcategoryName.errors" class="invalid-feedback">
                   <div *ngIf="f.SubcategoryName.errors.required"> Name is required</div>
@@ -30,7 +31,7 @@
                 </div>
                 <label>BriefDetails</label>
                  
-                 <input type="text" formControlName="BriefDetails" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.BriefDetails.errors }" />
+                 <textarea type="text" formControlName="BriefDetails" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.BriefDetails.errors }" ></textarea>
                  <div *ngIf="submitted && f.BriefDetails.errors" class="invalid-feedback">
                    <div *ngIf="f.BriefDetails.errors.required">Brief Details is required</div>
                  </div>

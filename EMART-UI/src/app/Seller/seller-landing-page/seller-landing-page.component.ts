@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-seller-landing-page',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seller-landing-page.component.css']
 })
 export class SellerLandingPageComponent implements OnInit {
-collapse:boolean=true;
-  constructor() { }
+  constructor(private route:Router) {
+    if(!(localStorage.getItem('token'))){
+      this.route.navigateByUrl('/home');
+    }
+   }
 
   ngOnInit() {
+    
   }
 
+  Logout()
+  {
+    localStorage.clear();
+    localStorage.removeItem('buyerid');
+    localStorage.removeItem('token');
+    localStorage.removeItem('sellerid');
+    this.route.navigateByUrl('/home');
+  }
 }

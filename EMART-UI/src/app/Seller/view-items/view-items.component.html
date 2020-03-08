@@ -1,9 +1,7 @@
 <br><br><br><br>
-
-
-    <div class="container" id="c1">
+<div class="container" id="c1">
       <div class="row">
-        <div class="col-md-3" *ngFor="let item of list">
+        <div class="col-md-4" *ngFor="let item of list">
       <!-- <div class="card-deck" *ngFor="let item of list"> -->
       <div class="card">
         <img class="card-img-top" src="assets/images/{{item.image}}" alt="{{item.itemName}}" height="100px" align-items="center" width="190px">
@@ -16,7 +14,7 @@
           <button class="btn btn-primary" (click)="Edit(item.itemId)" data-toggle="modal" data-target="#myModal">Edit</button> 
           </div>
           </div>
-          <br>
+<br>
       </div>
       </div>
       </div>

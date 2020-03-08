@@ -26,7 +26,7 @@ display:inline-block;
 .navbar ul li a{
 display: block;
 text-decoration: none;
-padding: 20px 60px;
+padding: 10px 60px;
 font-size:20px;
 text-transform: uppercase;
 font-weight:300;
@@ -90,3 +90,23 @@ color: white;
   border-radius: 900px;
   font-size:10px;
 }
+@media (max-width: 1000px) {
+  .container{
+    width: 100%;
+    height: 100%;
+  }
+  .window {
+    width: 100%;
+    height: 100%;
+  }
+  .overlay {
+    width: 100%;
+    height: 100%;
+  }
+  }
+  @media (max-width:2000px){
+    .image{
+      width:100%;
+      height:2000px;
+    }
+  }

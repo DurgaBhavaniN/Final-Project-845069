@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
+import { Cart } from 'src/app/Models/cart';
+import { Items } from 'src/app/Models/items';
+import { Router } from '@angular/router';
+import { BuyerService } from 'src/app/Services/buyer.service';
 
 @Component({
   selector: 'app-view-cart',
@@ -6,10 +10,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-cart.component.css']
 })
 export class ViewCartComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  cartlist:Cart[];
+  item:Items;
+    constructor(private route:Router,private service:BuyerService) {
+      this.service.GetCartItems().subscribe(res=>{
+        this.cartlist=res;
+        console.log(this.cartlist);
+      })
+     }
+    ngOnInit() {
+    }
+  Buy(item1:Items){
+        console.log(item1);
+        this.item=item1;
+        localStorage.setItem('item1',JSON.stringify(this.item));
+        this.route.navigateByUrl('/buyer/buyproduct');
   }
-
+  Remove(Id:string)
+  {
+    console.log(Id);
+    // let id=itemId;
+    // console.log(id);
+    this.service.RemoveCartItem(Id).subscribe(res=>{
+      console.log('Item Removed from Cart');
+      alert('Item Removed from Cart');
+    })
+  }
+ 
 }

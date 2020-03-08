@@ -179,3 +179,14 @@ input {
       height: 100%;
     }
     }
+    .container{
+width:500px;
+      text-align: center;
+    }
+@media(max-width:500px)
+{
+  .container{
+    width:100%;
+    height:100%;
+  }
+}

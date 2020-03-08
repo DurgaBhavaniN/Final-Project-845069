@@ -31,7 +31,16 @@ input {
     transition: color .2s ease;
     }
     
-    
+    @media (max-width: 500px) {
+      .window {
+        width: 100%;
+        height: 100%;
+      }
+      .overlay {
+        width: 100%;
+        height: 100%;
+      }
+      }
     
     .input-line:focus {
     outline: none;

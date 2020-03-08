@@ -8,8 +8,8 @@ export class Items {
 itemId:string;
 itemName:string;
 image:string;
-price:number;
-stockNumber:number;
+price:string;
+stockNumber:string;
 description:string;
 sellerId:string;
 }
