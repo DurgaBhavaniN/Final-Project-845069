@@ -16,7 +16,9 @@ namespace Emart.BuyerService.Models
         public string StockNumber { get; set; }
         public string Remarks { get; set; }
         public string Image { get; set; }
+        public string BuyerId { get; set; }
 
+        public virtual Buyer Buyer { get; set; }
         public virtual Category Category { get; set; }
         public virtual Items Item { get; set; }
         public virtual Seller Seller { get; set; }

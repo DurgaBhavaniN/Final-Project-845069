@@ -72,7 +72,13 @@ namespace Emart.BuyerService.Repositories
                 {
                     return _context.Cart.ToList();
                 }
-                
-
+         public void ViewCart(string bid)
+        {
+             _context.Cart.Find(bid);
+        }
+        //public int GetCount(string bid)
+        //{
+        //    return _context.Cart.Where(res => res.BuyerId == bid).ToList().Count;
+        //}
     }
 }

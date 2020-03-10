@@ -64,10 +64,20 @@ namespace Emart.AdminService.Repositories
         {
             return _context.Category.Find(cid);
         }
+        public SubCategory GetSCatById(string subid)
+        {
+            return _context.SubCategory.Find(subid);
+        }
         public void UpdateCategory(Category obj)
         {
             _context.Category.Update(obj);
             _context.SaveChanges();
         }
+        public void UpdateSubCategory(SubCategory obj)
+        {
+            _context.SubCategory.Update(obj);
+            _context.SaveChanges();
+        }
+
     }
     }

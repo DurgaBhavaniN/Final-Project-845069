@@ -153,6 +153,22 @@ namespace Emart.AdminService.Controllers
             }
 
         }
+        [HttpGet]
+        [Route("GetSCatById/{SubcategoryId}")]
+        public IActionResult GetSCatById(string SubcategoryId)
+        {
+            try
+            {
+
+                return Ok(_iadmrepo.GetSCatById(SubcategoryId));
+            }
+
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+
+        }
         [HttpPut]
         [Route("UpdateCategory")]
         public IActionResult UpdateCategory(Category iobj)
@@ -160,6 +176,21 @@ namespace Emart.AdminService.Controllers
             try
             {
                 _iadmrepo.UpdateCategory(iobj);
+                return Ok();
+            }
+
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+        [HttpPut]
+        [Route("UpdateSubCategory")]
+        public IActionResult UpdateSubCategory(SubCategory iobj)
+        {
+            try
+            {
+                _iadmrepo.UpdateSubCategory(iobj);
                 return Ok();
             }
 

@@ -22,8 +22,9 @@ namespace Emart.BuyerService.Repositories
 
         List<TransactionHistory> TransactionHistory(string bid);
 
-
+        void ViewCart(string bid);
         List<Category> GetCategory();
         List<SubCategory> SubCategory(string catid);
+        //int GetCount(string bid);
     }
 }

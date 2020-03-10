@@ -187,7 +187,7 @@ namespace Emart.BuyerService.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound(ex.Message
+                return NotFound(ex.Message);
             }
         }
 

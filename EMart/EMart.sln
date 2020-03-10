@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emart.AdminService", "Emart
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GateWay", "GateWay\GateWay.csproj", "{BB2DD8B4-E796-40AB-90CF-F8889D90C594}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emart.AccountService", "Emart.AccountService\Emart.AccountService.csproj", "{FA42D09D-CE8D-445F-83E6-B212FAE7035A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emart.AccountService", "Emart.AccountService\Emart.AccountService.csproj", "{FA42D09D-CE8D-445F-83E6-B212FAE7035A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emart.Test", "Emart.Test\Emart.Test.csproj", "{3379A554-0F0A-4FC0-B869-41C34D4BFC51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{FA42D09D-CE8D-445F-83E6-B212FAE7035A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA42D09D-CE8D-445F-83E6-B212FAE7035A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA42D09D-CE8D-445F-83E6-B212FAE7035A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3379A554-0F0A-4FC0-B869-41C34D4BFC51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3379A554-0F0A-4FC0-B869-41C34D4BFC51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3379A554-0F0A-4FC0-B869-41C34D4BFC51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3379A554-0F0A-4FC0-B869-41C34D4BFC51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

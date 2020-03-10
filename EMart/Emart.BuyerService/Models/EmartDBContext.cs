@@ -82,6 +82,10 @@ namespace Emart.BuyerService.Models
                     .HasMaxLength(10)
                     .IsUnicode(false);
 
+                entity.Property(e => e.BuyerId)
+                    .HasMaxLength(5)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.CategoryId)
                     .IsRequired()
                     .HasMaxLength(5)
@@ -130,6 +134,11 @@ namespace Emart.BuyerService.Models
                     .HasMaxLength(5)
                     .IsUnicode(false);
 
+                entity.HasOne(d => d.Buyer)
+                    .WithMany(p => p.Cart)
+                    .HasForeignKey(d => d.BuyerId)
+                    .HasConstraintName("FK__Cart__BuyerId__5AEE82B9");
+
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Cart)
                     .HasForeignKey(d => d.CategoryId)
@@ -139,7 +148,6 @@ namespace Emart.BuyerService.Models
                 entity.HasOne(d => d.Item)
                     .WithMany(p => p.Cart)
                     .HasForeignKey(d => d.ItemId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Cart__ItemId__49C3F6B7");
 
                 entity.HasOne(d => d.Seller)
