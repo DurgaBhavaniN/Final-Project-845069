@@ -14,14 +14,12 @@
        <div class="collapse navbar-collapse" id="navbarText">
          <ul class="navbar-nav mr-auto">
           <li class="nav-item ">
-          <a class="nav-link" [routerLink]="['/seller']"><span class="glyphicon glyphicon-home"></span>Buyer</a>
+          <a class="nav-link" [routerLink]="['/buyer']"><span class="glyphicon glyphicon-home"></span>Buyer</a>
           </li>
            <li class="nav-item ">
              <a class="nav-link" [routerLink]="'buyproduct'"><span class="glyphicon glyphicon-shopping-cart"></span>BuyProduct</a>
            </li>
-           <li class="nav-item">
-            <a class="nav-link" [routerLink]="'viewcart'"><span class="glyphicon glyphicon-eye-open"></span>ViewCart</a>
-          </li>  
+             
           <li class="nav-item">
             <a class="nav-link" [routerLink]="'purchasehistory'"><span class="glyphicon glyphicon-record"></span>Purchase
               History</a>
@@ -29,38 +27,36 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="'search'"><span class="glyphicon glyphicon-search"></span>Search</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'viewcart'"><span class="glyphicon glyphicon-shopping-cart"></span>{{count}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/logout']"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+          </li>
           </ul>
         </div>
            <ul class="navbar-nav ml-auto">
-            <!-- <li class="nav-item">
-            <form class="form-inline ">
-              <input class="form-control" type="search" placeholder="Search" aria-label="Search"/>
-              <span class="glyphicon glyphicon-search"></span>
-              <button class="btn  my-2 my-sm-0" type="submit">Search</button> -->
-            <!-- </form>
-          </li> -->
+          
             <li class="nav-item">
               <a class="nav-link" [routerLink]="'editprofile'"><span class="glyphicon glyphicon-user glyphicon-border"></span> </a>
             </li>  
-             <li class="nav-item">
-               <a class="nav-link" [routerLink]="['/logout']"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
-             </li>
+             
           </ul>
           </nav>
         </div>
 
 
-  <div class="row">
+  <!-- <div class="row">
       <div class="col-2">
           <div class="sidebar ">
               <a [routerLink]="'buyproduct'"><span class="glyphicon glyphicon-shopping-cart"></span>  Buy Product</a><br><br>
               <a [routerLink]="'viewcart'"><span class="glyphicon glyphicon-eye-open"></span>  View Cart</a><br><br>
               <a [routerLink]="'purchasehistory'"><span class="glyphicon glyphicon-record"></span>  Purchase History</a>
           </div>
-      </div>
-      <div class="col-9">
+      </div> -->
+     
         <router-outlet></router-outlet> 
-      </div>
+      
   </div>
 </div>      
 

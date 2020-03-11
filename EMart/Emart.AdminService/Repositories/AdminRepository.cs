@@ -54,11 +54,9 @@ namespace Emart.AdminService.Repositories
 
             return _context.Category.ToList();
         }
-        public List<SubCategory> ViewSubcategories()
+        public List<SubCategory> ViewSubcategories(string cid)
         {
-
-
-            return _context.SubCategory.ToList();
+            return _context.SubCategory.Where(res => res.CategoryId == cid).ToList();
         }
         public Category GetCatById(string cid)
         {

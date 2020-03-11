@@ -42,13 +42,17 @@ export class AdminService {
 {
   return this.http.get<Category[]>(this.url+'ViewCategories',Requestheaders);
 }
-public ViewSubcategories():Observable<Subcategory[]>
+public ViewSubcategories(cid:string):Observable<any>
 {
-  return this.http.get<Subcategory[]>(this.url+'ViewSubcategories',Requestheaders);
+  return this.http.get<any>(this.url+'ViewSubcategories/'+cid,Requestheaders);
 }
 public GetCatById(id:string):Observable<Category>
 {
   return this.http.get<Category>(this.url+'GetCatById/'+id,Requestheaders);
+}
+public GetSCatById(id:string):Observable<any>
+{
+  return this.http.get<any>(this.url+'GetCatById/'+id,Requestheaders);
 }
 public UpdateCategory(item:Category):Observable<any>
 {

@@ -10,6 +10,7 @@
         "dependencies": {
           "Emart.AccountService": "1.0.0",
           "Emart.AdminService": "1.0.0",
+          "Emart.BuyerService": "1.0.0",
           "Emart.SellerService": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.2",
@@ -1956,6 +1957,18 @@
           "Emart.AdminService.dll": {}
         }
       },
+      "Emart.BuyerService/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.2",
+          "Microsoft.AspNetCore.Cors": "2.2.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.1",
+          "System.IdentityModel.Tokens.Jwt": "5.6.0"
+        },
+        "runtime": {
+          "Emart.BuyerService.dll": {}
+        }
+      },
       "Emart.SellerService/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.2",
@@ -3060,6 +3073,11 @@
       "sha512": ""
     },
     "Emart.AdminService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Emart.BuyerService/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

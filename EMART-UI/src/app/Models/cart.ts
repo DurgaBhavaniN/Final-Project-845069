@@ -10,5 +10,6 @@ export class Cart {
     stockNumber:string;
     remarks:string;
     image:string;
+    buyerId:string;
 }
 

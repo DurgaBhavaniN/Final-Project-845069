@@ -17,12 +17,7 @@ subcategorylist:Subcategory[];
 categorylist:Category[];
   constructor(private formbuilder:FormBuilder,private service:AdminService,private route:Router) {
    this.GetCategories();
-   this.service.ViewSubcategories().subscribe(res=>{
-    this.subcategorylist=res;
-    console.log(this.subcategorylist);
-  },err=>{
-    console.log(err);                                                                   
-  })
+   
    }
 
   ngOnInit() {
@@ -55,9 +50,11 @@ categorylist:Category[];
    }
    GetSubCategories()
   {
+    alert('fgd');
     let cid=this.viewscatform.value["categoryId"];
     console.log(cid);
-    this.service.GetSubCategory(cid).subscribe(res=>{
+    this.service.ViewSubcategories(cid).subscribe(res=>{
+      console.log(res);
       this.subcategorylist=res;
       console.log(this.subcategorylist);
     })

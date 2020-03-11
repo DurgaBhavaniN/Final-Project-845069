@@ -3,7 +3,7 @@
 
 <form [formGroup]="viewscatform">
 <label>Select Category</label>
-<select id="s1" formControlName="categoryName" (change)="GetSubCategories()" class="form-control  input-line full-width" >
+<select id="s1" formControlName="categoryId" (change)="GetSubCategories()" class="form-control  input-line full-width" >
  <option *ngFor="let cat of categorylist"  [value]="cat.categoryId">{{cat.categoryName}}</option>
  </select>
  <div *ngIf="submitted && f.categoryName.errors" class="invalid-feedback">
@@ -17,13 +17,14 @@
         <th>BriefDetails</th>
         <th>GST</th>
         </tr>
-        <tr *ngFor="let item of list">
+        <tr *ngFor="let item of subcategorylist">
             <td>{{item.subcategoryId}}</td>
             <td>{{item.categoryName}}</td>
             <td>{{item.subcategoryName}}</td>
             <td>{{item.briefDetails}}</td>
             <td>{{item.gst}}</td>
-            <td><button class="btn btn-primary" (click)="Edit(item.categoryId)" data-toggle="modal" data-target="#myModal">Edit</button></td>
+            <td><button class="btn btn-primary" type="button">Edit</button></td>
+            <!-- <td><button class="btn btn-primary" (click)="Edit(item.subcategoryId)" data-toggle="modal" data-target="#myModal">Edit</button></td> -->
         </tr>
         </table>
 </form>

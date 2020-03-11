@@ -15,10 +15,16 @@ export class SearchComponent implements OnInit {
   
   buyerform:FormGroup;
   item:Items;
+ 
   itemlist:Items[];
   itemName:string;
   cart:Cart;
-    constructor(private builder:FormBuilder,private service:BuyerService,private route:Router) { }
+    constructor(private builder:FormBuilder,private service:BuyerService,private route:Router) {
+          // this.service.GetAllItems().subscribe(res=>{
+    //   this.itemlist=res;
+    //   console.log(this.itemlist);
+    // })
+     }
   
     ngOnInit() {
       this.buyerform=this.builder.group({
@@ -31,7 +37,8 @@ export class SearchComponent implements OnInit {
          description:[''],
          remarks:[''],
          image:[''],
-         stockNumber:['']
+         stockNumber:[''],
+         buyerId:['']
 
       });
   
@@ -51,7 +58,7 @@ localStorage.setItem('item',JSON.stringify(item));
 this.route.navigateByUrl('/buyer/buyproduct')
 }
 AddtoCart(item:Items)
-{
+{let bid=localStorage.getItem('buyerId');
  this.cart=new Cart();
  this.cart.id='C'+Math.round(Math.random()*999);
  this.cart.itemId=item.itemId;
@@ -64,6 +71,7 @@ AddtoCart(item:Items)
    this.cart.description=item.description;
    this.cart.remarks=item.remarks;
    this.cart.image=item.image;
+   this.cart.buyerId=bid;
    console.log(this.cart);
    this.service.AddtoCart(this.cart).subscribe(res=>{
      console.log("Record added To Cart");

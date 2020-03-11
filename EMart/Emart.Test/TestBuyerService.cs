@@ -40,7 +40,7 @@ namespace Emart.Test
         }
         [Test]
         [Description("Test ")]
-        public void BuyItem()
+        public void TestBuyItem()
         {
             _repo.BuyItem(new TransactionHistory()
                 {
@@ -48,7 +48,7 @@ namespace Emart.Test
                      BuyerId="3",
                 SellerId = "1",
                 TransactionId = "T928",
-                ItemId = "I98",
+                ItemId = "I89",
                 NumberOfItems = "2",
                 DateTime = DateTime.Now,
                 Remarks = "NTNG",
@@ -59,15 +59,15 @@ namespace Emart.Test
         }
         [Test]
         [Description("Test TransactionHistory()")]
-        public void TransactionHistory()
+        public void TestTransactionHistory()
         {
             var result = _repo.TransactionHistory("3");
             Assert.NotNull(result);
 
         }
         [Test]
-        [Description("Test AddToCart()"]
-        public void AddtoCart()
+        [Description("Test AddToCart()")]
+        public void TestAddtoCart()
         {
             _repo.AddtoCart(new Cart()
             {
@@ -75,7 +75,7 @@ Id="C256",
 CategoryId="C63",
 SubcategoryId="SC26",
 SellerId="2",
-ItemId="I98",
+ItemId="I89",
 Itemname="LG",
 Price="14000",
 Description="High Battery",
@@ -84,7 +84,24 @@ Remarks="1",
 Image="headset.jpg",
 BuyerId="B4"
             });
-            var result=_repo.GetCartItems()
+            var result = _repo.ViewCart("B4","I98");
+            Assert.IsNotNull(result);
+        }
+        [Test]
+        [Description("Test DeleteCartItems()")]
+        public void TestDeleteCartItems()
+        {
+            _repo.DeleteCartItems("C325");
+            var result = _repo.GetCartItem("C325");
+
+            Assert.Null(result);
+        }
+        [Test]
+        [Description("Test GetCartItems()")]
+        public void TestGetCartItems()
+        {
+            var result = _repo.GetCartItems("B4");
+            Assert.IsNotNull(result);
         }
     }
 }

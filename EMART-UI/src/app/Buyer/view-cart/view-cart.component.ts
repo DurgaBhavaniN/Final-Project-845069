@@ -13,11 +13,17 @@ export class ViewCartComponent implements OnInit {
   cartlist:Cart[];
   item:Items;
     constructor(private route:Router,private service:BuyerService) {
-      this.service.GetCartItems().subscribe(res=>{
+      if(localStorage.getItem('buyerId')){
+        let bid=localStorage.getItem('buyerId');
+      this.service.GetCartItems(bid).subscribe(res=>{
         this.cartlist=res;
         console.log(this.cartlist);
       })
      }
+     else{
+       alert("Login with ur credientials");
+       this.route.navigateByUrl('/login');
+     }}
     ngOnInit() {
     }
   Buy(item1:Items){

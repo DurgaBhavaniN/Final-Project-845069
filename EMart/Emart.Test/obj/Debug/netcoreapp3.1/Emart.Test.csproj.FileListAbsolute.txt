@@ -213,3 +213,6 @@ D:\Final-Project-DurgaBhavani-845069\EMart\Emart.Test\bin\Debug\netcoreapp3.1\Em
 D:\Final-Project-DurgaBhavani-845069\EMart\Emart.Test\bin\Debug\netcoreapp3.1\Emart.SellerService.exe
 D:\Final-Project-DurgaBhavani-845069\EMart\Emart.Test\bin\Debug\netcoreapp3.1\Emart.SellerService.dll
 D:\Final-Project-DurgaBhavani-845069\EMart\Emart.Test\bin\Debug\netcoreapp3.1\Emart.SellerService.pdb
+D:\Final-Project-DurgaBhavani-845069\EMart\Emart.Test\bin\Debug\netcoreapp3.1\Emart.BuyerService.exe
+D:\Final-Project-DurgaBhavani-845069\EMart\Emart.Test\bin\Debug\netcoreapp3.1\Emart.BuyerService.dll
+D:\Final-Project-DurgaBhavani-845069\EMart\Emart.Test\bin\Debug\netcoreapp3.1\Emart.BuyerService.pdb

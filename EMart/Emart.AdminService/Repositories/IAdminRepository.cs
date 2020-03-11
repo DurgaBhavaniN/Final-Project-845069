@@ -9,7 +9,7 @@ namespace Emart.AdminService.Repositories
     public interface IAdminRepository
     {
         List<Category> ViewCategories();
-        List<SubCategory> ViewSubcategories();
+        List<SubCategory> ViewSubcategories(string cid);
         void AddCategory(Category obj);
         void AddSubCategory(SubCategory obj);
         void DeleteCategory(string cname);

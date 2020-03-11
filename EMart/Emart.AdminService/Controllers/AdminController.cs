@@ -123,13 +123,12 @@ namespace Emart.AdminService.Controllers
             }
         }
         [HttpGet]
-        [Route("ViewSubcategories")]
-        public IActionResult ViewSubcategories()
+        [Route("ViewSubcategories/{cid}")]
+        public IActionResult ViewSubcategories(string cid)
         {
             try
             {
-
-                return Ok(_iadmrepo.ViewSubcategories());
+                return Ok(_iadmrepo.ViewSubcategories(cid));
             }
 
             catch (Exception ex)
@@ -138,13 +137,13 @@ namespace Emart.AdminService.Controllers
             }
         }
         [HttpGet]
-        [Route("GetCatById/{categoryId}")]
-        public IActionResult GetCatById(string categoryId)
+        [Route("GetCatById/{subcategoryId}")]
+        public IActionResult GetCatById(string subcategoryId)
         {
             try
             {
 
-                return Ok(_iadmrepo.GetCatById(categoryId));
+                return Ok(_iadmrepo.GetCatById(subcategoryId));
             }
 
             catch (Exception ex)
@@ -154,13 +153,13 @@ namespace Emart.AdminService.Controllers
 
         }
         [HttpGet]
-        [Route("GetSCatById/{SubcategoryId}")]
-        public IActionResult GetSCatById(string SubcategoryId)
+        [Route("GetSCatById/{categoryId}")]
+        public IActionResult GetSCatById(string categoryId)
         {
             try
             {
 
-                return Ok(_iadmrepo.GetSCatById(SubcategoryId));
+                return Ok(_iadmrepo.GetSCatById(categoryId));
             }
 
             catch (Exception ex)

@@ -68,17 +68,25 @@ namespace Emart.BuyerService.Repositories
                     return _context.Items.ToList();
                 }
 
-                public List<Cart> GetCartItems()
+                public List<Cart> GetCartItems(string bid)
                 {
-                    return _context.Cart.ToList();
+                    return _context.Cart.Where(e=>e.BuyerId==bid).ToList();
                 }
-         public void ViewCart(string bid)
+         public bool ViewCart(string bid,string iId)
         {
-             _context.Cart.Find(bid);
+            Cart cart = _context.Cart.SingleOrDefault(i => i.BuyerId == bid && i.ItemId == iId);
+            if (cart != null)
+                return true;
+            else 
+                return false;
         }
-        //public int GetCount(string bid)
-        //{
-        //    return _context.Cart.Where(res => res.BuyerId == bid).ToList().Count;
-        //}
+        public Cart GetCartItem(string cartid)
+        {
+            return _context.Cart.Find(cartid);
+        }
+        public int GetCount(string bid)
+        {
+            return _context.Cart.Where(res => res.BuyerId == bid).ToList().Count;
+        }
     }
 }

@@ -20,9 +20,9 @@ export class SellerLandingPageComponent implements OnInit {
   Logout()
   {
     localStorage.clear();
-    localStorage.removeItem('buyerid');
+    localStorage.removeItem('buyerId');
     localStorage.removeItem('token');
-    localStorage.removeItem('sellerid');
+    localStorage.removeItem('sellerId');
     this.route.navigateByUrl('/home');
   }
 }

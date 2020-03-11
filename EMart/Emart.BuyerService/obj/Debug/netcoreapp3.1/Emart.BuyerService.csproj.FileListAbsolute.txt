@@ -7,7 +7,6 @@ D:\Final-Project-DurgaBhavani-845069\EMart\Emart.BuyerService\bin\Debug\netcorea
 D:\Final-Project-DurgaBhavani-845069\EMart\Emart.BuyerService\bin\Debug\netcoreapp3.1\Emart.BuyerService.runtimeconfig.dev.json
 D:\Final-Project-DurgaBhavani-845069\EMart\Emart.BuyerService\bin\Debug\netcoreapp3.1\Emart.BuyerService.dll
 D:\Final-Project-DurgaBhavani-845069\EMart\Emart.BuyerService\bin\Debug\netcoreapp3.1\Emart.BuyerService.pdb
-D:\Final-Project-DurgaBhavani-845069\EMart\Emart.BuyerService\obj\Debug\netcoreapp3.1\Emart.BuyerService.csprojAssemblyReference.cache
 D:\Final-Project-DurgaBhavani-845069\EMart\Emart.BuyerService\obj\Debug\netcoreapp3.1\staticwebassets\Emart.BuyerService.StaticWebAssets.Manifest.cache
 D:\Final-Project-DurgaBhavani-845069\EMart\Emart.BuyerService\obj\Debug\netcoreapp3.1\staticwebassets\Emart.BuyerService.StaticWebAssets.xml
 D:\Final-Project-DurgaBhavani-845069\EMart\Emart.BuyerService\obj\Debug\netcoreapp3.1\Emart.BuyerService.AssemblyInfoInputs.cache
@@ -128,3 +127,4 @@ D:\Final-Project-DurgaBhavani-845069\EMart\Emart.BuyerService\bin\Debug\netcorea
 D:\Final-Project-DurgaBhavani-845069\EMart\Emart.BuyerService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 D:\Final-Project-DurgaBhavani-845069\EMart\Emart.BuyerService\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 D:\Final-Project-DurgaBhavani-845069\EMart\Emart.BuyerService\obj\Debug\netcoreapp3.1\Emart.BuyerService.MvcApplicationPartsAssemblyInfo.cache
+D:\Final-Project-DurgaBhavani-845069\EMart\Emart.BuyerService\obj\Debug\netcoreapp3.1\Emart.BuyerService.csprojAssemblyReference.cache
