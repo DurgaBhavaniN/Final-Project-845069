@@ -18,7 +18,13 @@ input {
     ::-webkit-input-placeholder .input-line:focus +::input-placeholder {
     color: #fff;
     }
-    
+    .container{
+      position: relative;
+  /* text-align: center; */
+  padding-top: 10%;
+  padding-left: 60%;
+
+    }
     .highlight {
     color: rgba(255, 255, 255, 0.8);
     font-weight: 400;

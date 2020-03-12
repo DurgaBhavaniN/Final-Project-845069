@@ -12,6 +12,7 @@ import { BuyerService } from 'src/app/Services/buyer.service';
 export class ViewCartComponent implements OnInit {
   cartlist:Cart[];
   item:Items;
+  cart:Cart;
     constructor(private route:Router,private service:BuyerService) {
       if(localStorage.getItem('buyerId')){
         let bid=localStorage.getItem('buyerId');
@@ -20,23 +21,18 @@ export class ViewCartComponent implements OnInit {
         console.log(this.cartlist);
       })
      }
-     else{
-       alert("Login with ur credientials");
-       this.route.navigateByUrl('/login');
-     }}
+    }
     ngOnInit() {
     }
-  Buy(item1:Items){
+  Buy(item1:Cart){
         console.log(item1);
-        this.item=item1;
-        localStorage.setItem('item1',JSON.stringify(this.item));
+        this.cart=item1;
+        localStorage.setItem('cart',JSON.stringify(this.cart));
         this.route.navigateByUrl('/buyer/buyproduct');
   }
   Remove(Id:string)
   {
     console.log(Id);
-    // let id=itemId;
-    // console.log(id);
     this.service.RemoveCartItem(Id).subscribe(res=>{
       console.log('Item Removed from Cart');
       alert('Item Removed from Cart');

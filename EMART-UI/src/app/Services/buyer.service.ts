@@ -57,5 +57,9 @@ export class BuyerService {
 
     return this.http.get<any>(this.url+'GetAllItems',Requestheaders);
   }
+  public CheckCartItems(itemid:string,bid:string):Observable<any>
+  {
+return this.http.get<any>(this.url+'ViewCart/'+itemid+'/'+bid,Requestheaders);
+  }
 }
   

@@ -1,87 +1,37 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
-<div class="container-fluid">
-<div class="image">
-  
-  <div class="row">
-      <nav class="navbar navbar-expand-lg ">
-     <div class="collapse navbar-collapse" id="navbarText">
-       <ul class="navbar-nav mr-auto">
-        <li class="nav-item ">
-        <a class="nav-link" [routerLink]="['/home']"><span class="glyphicon glyphicon-home"></span>Home</a>
-        </li>
-         <li class="nav-item ">
-           <a class="nav-link" href="#"><span class="glyphicon glyphicon-user"></span>  About</a>
-         </li>
-         <li class="nav-item">
-           <a class="nav-link" href="#"><span class="glyphicon glyphicon-earphone"></span>  Contact us</a>
-         </li>  
-        </ul>
-      </div>
-         <ul class="navbar-nav ml-auto">
-         <li class="nav-item ">
-             <a class="nav-link" [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-           </li>
-           
-        </ul>
-        </nav>
-      </div>
-   
 
- <div class="row">
-  <div class="col-5">
-    <div class="sidebar ">
-      <a href="#"><span class="glyphicon glyphicon-user"></span>  ABOUT</a><br><br>
-      <a href="#"><span class="glyphicon glyphicon-earphone"></span>  CONTACT US</a><br><br>
-    </div>
+<div class="hero-image">
+  <nav class="navbar navbar-expand-lg navbar-light ">
+  <a class="navbar-brand" id="n1">eMart</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+         
+          <li class="nav-item" >
+            <a class="nav-link" href="#" id="b1"><span class="glyphicon glyphicon-user"></span>  About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="b1"><span class="glyphicon glyphicon-earphone"></span>  Contact us</a>
+          </li>  
+         </ul>
+       </div>
+         
+         </nav>
+   <div class="hero-text">
+ <p style="font-size:30px">FAST & EASY</p>
+ 
+ <hr>
+     <h1 style="font-size:70px">SHOPPING</h1>
+ <p style="font-size:40px"> ON THE GO</p>
+     
+     <button (click)="Shop()">Shop Now</button>
    </div>
-  <div class="col-7">
-    <br><br><br><br>
-  <div class='bold-line'></div>
-    <div class='window'>
-      <div class='overlay'></div>
-      <div class='content'>
-        <div class='welcome'>Sign In</div>
-        <form [formGroup]="loginForm" (ngSubmit)="Validate()">
-          <div class="input-fields">
-            <label>Name</label>
-            <input type="text" formControlName="username" placeholder="Enter ID" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-              <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                <div *ngIf="f.username.errors.required">Name is required</div>
-              </div>
-            <label>Password</label>
-            <input type="password" formControlName="password" placeholder="Enter Password" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                <div *ngIf="f.password.errors.required">Password is required</div>
-              </div>
-          </div>
-          <br>
-          <div>
-          Buyer  <input type="radio" formControlName="role"  value="buyer" name="role" />&nbsp;
-          Seller  <input type="radio" formControlName="role"  value="seller" name="role" />
-        </div>
-<br>
-          <div class="text-center">
-            <button class="ghost-round full-width " id=b1>Login</button>
-            <button class="ghost-round full-width " type="reset" (click)="onReset()" id=b2>Reset</button>
-          </div>
-                <br>
-          <div class="form-row">
-            <div class="col">
-                  <a [routerLink]="['/registerbuyer']">Register Buyer</a></div>
-            <div class="col">
-                  <a [routerLink]="['/registerseller']">Register Seller</a> </div>
-          </div>  
-        </form>
-      </div>
-    </div>
-   </div>
-</div> 
-</div>
-</div>
+ </div>
