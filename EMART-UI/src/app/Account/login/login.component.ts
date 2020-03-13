@@ -71,7 +71,7 @@ this.service.SellerLogin(username,password).subscribe(res=>{
   console.log(res)
   
   this.token=res;
-  localStorage.setItem('token',this.token.token);
+  localStorage.setItem('token1',this.token.token);
   localStorage.setItem('sellerId',this.token.sellerId);
   if(this.token.msg=="success"){
     this.route.navigateByUrl("/seller")
@@ -86,7 +86,7 @@ if(role=='')
 {
 if(username=="Admin" && password=="admin")
 {
-  localStorage.setItem('token',this.token.token);
+  localStorage.setItem('token2',this.token.token);
   this.route.navigateByUrl("/admin");
 }
 else{

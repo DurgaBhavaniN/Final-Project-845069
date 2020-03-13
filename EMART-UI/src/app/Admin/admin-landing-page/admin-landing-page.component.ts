@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AdminLandingPageComponent implements OnInit {
 
   constructor(private route:Router) {
-    if(!(localStorage.getItem('token'))){
+    if(!(localStorage.getItem('token2'))){
       this.route.navigateByUrl('/home');
     }
    }
@@ -22,7 +22,7 @@ export class AdminLandingPageComponent implements OnInit {
   {
     localStorage.clear();
     localStorage.removeItem('buyerId');
-    localStorage.removeItem('token');
+    localStorage.removeItem('token2');
     localStorage.removeItem('sellerId');
     this.route.navigateByUrl('/home');
   }
