@@ -59,6 +59,7 @@ Update()
        {
          console.log('Record Updated');
        })
+       
  } 
   Edit(categoryId:string)
   {

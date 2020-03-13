@@ -49,21 +49,25 @@
                 <input type="text" formControlName="name"placeholder="Enter Name" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
                 <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
                <div *ngIf="f.name.errors.required">Name is required</div>
+               <div *ngIf="f.name.errors.pattern">Enter a Valid Name </div>
                </div> 
               <label>Password</label>
               <input type="password" formControlName="pwd" placeholder="Enter Password" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.pwd.errors }" />
                 <div *ngIf="submitted && f.pwd.errors" class="invalid-feedback">
                   <div *ngIf="f.pwd.errors.required">Password is required</div>
+                  <div *ngIf="f.pwd.errors.pattern">Password must contain 6-15 places</div>
                 </div>
               <label>EMAIL</label>
                 <input type="text" formControlName="email" placeholder="Enter Email" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
                 <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                    <div *ngIf="f.email.errors.required">Email is required</div>
+                   <div *ngIf="f.email.errors.pattern">Enter  a valid Email Address</div>
                 </div>
                 <label>MOBILE</label>
                 <input type="text" formControlName="phn" placeholder="Enter Mobile Number" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.phn.errors }" />
                 <div *ngIf="submitted && f.phn.errors" class="invalid-feedback">
                <div *ngIf="f.phn.errors.required">Mobile Number is required</div>
+               <div *ngIf="f.phn.errors.pattern">Enter a 10 Digit valid Mobile Number</div>
                </div>
                
             </div>

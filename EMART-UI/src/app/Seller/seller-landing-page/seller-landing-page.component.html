@@ -22,33 +22,23 @@
            <li class="nav-item">
             <a class="nav-link" [routerLink]="'viewitems'"><span class="glyphicon glyphicon-eye-open"></span> ViewItems </a>
           </li>  
-          <!-- <li class="nav-item">
-            <a class="nav-link" [routerLink]="'viewreports'"><span class="glyphicon glyphicon-eye-open"></span> ViewReports </a>
-          </li>   -->
+          
           </ul>
         </div>
            <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/logout']"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" [routerLink]="'editprofile'"><span class="glyphicon glyphicon-user glyphicon-border"></span> </a>
             </li>  
-             <li class="nav-item">
-               <a class="nav-link" [routerLink]="['/logout']"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
-             </li>
+             
           </ul>
           </nav>
         </div>
      
-    <!-- <div class="row">
-      <div class="col-2">
-          <div class="sidebar ">
-              <a [routerLink]="'additems'"><span class="glyphicon glyphicon-shopping-cart"></span> Add Items</a><br><br>
-              <a [routerLink]="'viewitems'"><span class="glyphicon glyphicon-eye-open"></span>  View Items</a><br><br>
-              <!-- <a [routerLink]="'viewreports'"><span class="glyphicon glyphicon-record"></span> View Reports</a> -->
-          <!-- </div>
-      </div> --> 
-      <!-- <div class="col-7" id=a1> -->
+    
         <router-outlet></router-outlet> 
-      <!-- </div> -->
-    <!-- </div> -->
+      
 </div>
 </div>

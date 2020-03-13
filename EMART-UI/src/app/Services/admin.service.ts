@@ -52,10 +52,14 @@ public GetCatById(id:string):Observable<Category>
 }
 public GetSCatById(id:string):Observable<any>
 {
-  return this.http.get<any>(this.url+'GetCatById/'+id,Requestheaders);
+  return this.http.get<any>(this.url+'GetSCatById/'+id,Requestheaders);
 }
 public UpdateCategory(item:Category):Observable<any>
 {
   return this.http.put<any>(this.url+'UpdateCategory',JSON.stringify(item),Requestheaders);
+}
+public UpdateSubCategory(item:Subcategory):Observable<any>
+{
+  return this.http.put<any>(this.url+'UpdateSubCategory',JSON.stringify(item),Requestheaders);
 }
 }

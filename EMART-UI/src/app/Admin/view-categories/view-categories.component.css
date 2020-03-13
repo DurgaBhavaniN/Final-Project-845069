@@ -182,6 +182,7 @@ input {
     .container{
 width:500px;
       text-align: center;
+      background-image: url('src/assets/images/adm.jpg');
     }
 @media(max-width:500px)
 {

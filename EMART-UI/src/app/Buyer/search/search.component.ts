@@ -20,10 +20,6 @@ export class SearchComponent implements OnInit {
   itemName:string;
   cart:Cart;
     constructor(private builder:FormBuilder,private service:BuyerService,private route:Router) {
-          // this.service.GetAllItems().subscribe(res=>{
-    //   this.itemlist=res;
-    //   console.log(this.itemlist);
-    // })
      }
   
     ngOnInit() {

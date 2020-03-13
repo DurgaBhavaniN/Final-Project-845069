@@ -1,5 +1,5 @@
 
-   <br><br><br>
+   <br><br><br><br><br><br><br><br><br><br><br>
 <div class="container">
 <form [formGroup]="viewscatform">
 <label>Select Category</label>
@@ -9,23 +9,61 @@
  <div *ngIf="submitted && f.categoryName.errors" class="invalid-feedback">
  </div>
  <br>
- <table class="table table-bordered">
+ <table class="table ">
     <tr>
         <th>SubCategoryId</th>
-        <th>CategoryName</th>
-        <th>SubCategoryName</th>
+        <th>CategoryId</th>
+        <th>SCategoryName</th>
         <th>BriefDetails</th>
         <th>GST</th>
+        <th></th>
         </tr>
         <tr *ngFor="let item of subcategorylist">
             <td>{{item.subcategoryId}}</td>
-            <td>{{item.categoryName}}</td>
+            <td>{{item.categoryId}}</td>
             <td>{{item.subcategoryName}}</td>
             <td>{{item.briefDetails}}</td>
             <td>{{item.gst}}</td>
-            <td><button class="btn btn-primary" type="button">Edit</button></td>
-            <!-- <td><button class="btn btn-primary" (click)="Edit(item.subcategoryId)" data-toggle="modal" data-target="#myModal">Edit</button></td> -->
+            <!-- <td><button class="btn btn-primary" type="button">Edit</button></td> -->
+            <td><button class="btn btn-primary" (click)="Edit(item.subcategoryId)" data-toggle="modal" data-target="#myModal">Edit</button></td>
         </tr>
         </table>
 </form>
+</div>
+
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog ">
+      <div class='bold-line'></div>
+      <div class='window'>
+        <div class='overlay'></div>
+           <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+               <div class='welcome'>Edit SubCategory</div>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+<div class="modal-body">
+    <form [formGroup]="viewscatform" >
+          <div class="input-fields">
+            <label>CategoryId</label>
+            <input type="text" formControlName="categoryId"  readonly class="form-control input-line full-width"/>
+            <label>SubCategoryId</label>
+            <input type="text" formControlName="subcategoryId"  readonly class="form-control input-line full-width"/>
+             <label>SubCategoryName</label>
+            <input type="text" formControlName="subcategoryName" class="form-control input-line full-width"/>
+            <label>Description</label>
+            <input type="text" formControlName="briefDetails" class="form-control input-line full-width"/>
+            <label>GST</label>
+            <input type="text" formControlName="gst" class="form-control input-line full-width"/>
+             </div>
+    </form>
+   </div>
+
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" (click)="Update()" data-dismiss="modal">Save</button>
+</div>
+</div>
+
+</div>
 </div>

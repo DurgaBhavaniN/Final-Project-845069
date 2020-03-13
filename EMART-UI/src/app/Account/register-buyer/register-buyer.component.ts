@@ -26,10 +26,10 @@ item:Buyer;
   ngOnInit() {
     this.registerForm=this.formbuilder.group({
      
-     name:['',[Validators.required,Validators.pattern('^[a-zA-Z]{3,6}$')]],
+     name:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]{3,20}$')]],
       phn:['',[Validators.required,Validators.pattern("^[6-9][0-9]{9}$")]],
      email:['',[Validators.required,Validators.email]],
-      pwd:['',[Validators.required,Validators.minLength(6)]]
+      pwd:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9`!@#$%^&*()_+=]{6,15}$')]]
       
     });
   }

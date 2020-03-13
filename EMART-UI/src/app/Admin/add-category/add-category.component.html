@@ -11,9 +11,10 @@
                 <input type="text" formControlName="categoryName" placeholder="Enter Category Name" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.categoryName.errors }" />
                 <div *ngIf="submitted && f.categoryName.errors" class="invalid-feedback">
                 <div *ngIf="f.categoryName.errors.required">Category Name is required</div>
+                <div *ngIf="f.categoryName.errors.pattern">Enter a Proper Category Name </div>
                 </div>
                 <label>Brief(optional)</label>
-                <input type="text" formControlName="briefDetails" placeholder="Enter brief about Category" class="form-control input-line full-width" />
+                <textarea formControlName="briefDetails" placeholder="Enter brief about Category" class="form-control input-line full-width" ></textarea>
                 
                 
             </div>

@@ -28,8 +28,8 @@ export class AddSubcategoryComponent implements OnInit {
      
       SubcategoryName:['',[Validators.required,Validators.pattern('^[a-zA-Z]{3,15}$')]],
       // CategoryId:['',[Validators.required,Validators.pattern("^[0-9]{1,5}$")]],
-      GST:['',Validators.required],
-      BriefDetails:['',Validators.required],
+      GST:['',Validators.required,Validators.pattern('^[0-9]{5}')],
+      BriefDetails:[''],
       CategoryName:['']
 
     

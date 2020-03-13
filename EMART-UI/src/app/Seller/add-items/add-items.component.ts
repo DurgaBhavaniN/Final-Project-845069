@@ -40,10 +40,10 @@ selectedFile : File = null;
   ngOnInit() {
 
     this.additemForm=this.formbuilder.group({
-    ItemId:['',Validators.required],
-     ItemName:['',[Validators.required,Validators.pattern('^[a-zA-Z]{3,6}$')]],
-     Price:['',Validators.required],
-     StockNumber:['',Validators.required],
+    ItemId:[''],
+     ItemName:['',[Validators.required,Validators.pattern('^[a-zA-Z]{3,15}$')]],
+     Price:['',[Validators.required,Validators.pattern('^[0-9]+$')]],
+     StockNumber:['',[Validators.required,Validators.pattern('^[0-9]+$')]],
      Remarks:[''],
      Description:[''],
      CategoryId:[''],
@@ -60,6 +60,7 @@ selectedFile : File = null;
       console.log(JSON.stringify(this.additemForm.value));
     }
     this.Add();
+    
 }
 get f()
 {
@@ -74,7 +75,7 @@ Logout(){
   this.route.navigateByUrl('/login');
 }
  
-Add()
+Add():void  
 {
   
   this.item=new Items();

@@ -22,12 +22,12 @@ pobj:TransactionHistory;
   ngOnInit() {
 this.buyerform=this.formbuilder.group({
   transactionType:[''],
-  cardNumber:[''],
-  cvv:[''],
-  edate:[''],
-  name:[''],
-  dateTime:[''],
-  numberOfItems:[''],
+  cardNumber:['',Validators.required],
+  cvv:['',Validators.required],
+  edate:['',Validators.required],
+  name:['',Validators.required],
+  dateTime:['',Validators.required],
+  numberOfItems:['',Validators.required],
   remarks:['']
 })
 this.cart=JSON.parse(localStorage.getItem('cart'));

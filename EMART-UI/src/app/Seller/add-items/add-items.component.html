@@ -1,64 +1,62 @@
 <div class="container">
-<div class='bold-line'></div>
-      <div class='window'>
-        <div class='overlay'></div>
-        <div class='content'>
-          <div class='welcome'>Add Items</div>
-          <form [formGroup]="additemForm" (ngSubmit)="onSubmit()">
-            <div class="input-fields">
-              <label>Select Category</label>
-              <select id="s1" formControlName="CategoryId" (change)="GetSubCategories()" class="form-control  input-line full-width" >
-               <option *ngFor="let cat of categorylist" value="{{cat.categoryId}}">{{cat.categoryName}}</option>
-               </select>
-               <div *ngIf="submitted && f.CategoryId.errors" class="invalid-feedback">
-               </div>
-               <label>Select SubCategory</label>
-               <select id="s1" formControlName="SubcategoryId" class="form-control  input-line full-width" >
-                <option *ngFor="let cat of subcategorylist" value="{{cat.subcategoryId}}">{{cat.subcategoryName}}</option>
-                </select>
-                <div *ngIf="submitted && f.SubcategoryId.errors" class="invalid-feedback">
-                </div>
-                
-
-              
-                <label>Item Name</label>
-                <input type="text" formControlName="ItemName" placeholder="Enter Item Name" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.ItemName.errors }" />
-                <div *ngIf="submitted && f.ItemName.errors" class="invalid-feedback">
-                <div *ngIf="f.ItemName.errors.required">Name is required</div>
-                </div>
-                <label>Price</label>
-                <input type="text" formControlName="Price" placeholder="Enter Item Price" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.Price.errors }" />
-                <div *ngIf="submitted && f.Price.errors" class="invalid-feedback">
-                <div *ngIf="f.Price.errors.required"> Item Price is required</div>
-                </div>
-                <label>Stock Number</label>
-                <input type="text" formControlName="StockNumber" placeholder="Enter Stock" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.StockNumber.errors }" />
-                <div *ngIf="submitted && f.StockNumber.errors" class="invalid-feedback">
-               <div *ngIf="f.StockNumber.errors.required"> Stock is required</div>
-              </div>
-              <label>Brief(optional)</label>
-                <input type="text" formControlName="Description" placeholder="Enter brief about Item" class="form-control input-line full-width" />
-              <label>Remarks</label>
-                <input type="text" formControlName="Remarks" placeholder="Enter remarks" class="form-control input-line full-width" />
-              </div>
-              <label>Image</label>
-              <input type="file"  (change)="fileEvent($event)">
-              <br><br>
-              <div *ngFor="let s of item">
-                <div>
-                  <img src='assets/images/{{s.image}}' style="height:150px; width:150px;"><br>
-                  Name:{{s.ItemName}}
-                </div>
-              </div>
-            <div class="text-center">
-              <button class="ghost-round full-width " >Add</button>
-              
-              <button class="ghost-round full-width " type="reset" (click)="onReset()" id=b2>Reset</button>
-            </div>
+  <div class='bold-line'></div>
+        <div class='window'>
+          <div class='overlay'></div>
+          <div class='content'>
+            <div class='welcome'>Add Items</div>
+            <form [formGroup]="additemForm" (ngSubmit)="onSubmit()">
+              <div class="input-fields">
+                <label>Select Category</label>
+                <select id="s1" formControlName="CategoryId" (change)="GetSubCategories()" class="form-control  input-line full-width" >
+                 <option *ngFor="let cat of categorylist" value="{{cat.categoryId}}">{{cat.categoryName}}</option>
+                 </select>
                  
-          </form>
+                 <label>Select SubCategory</label>
+                 <select id="s1" formControlName="SubcategoryId" class="form-control  input-line full-width" >
+                  <option *ngFor="let cat of subcategorylist" value="{{cat.subcategoryId}}">{{cat.subcategoryName}}</option>
+                  </select>
+                  
+                
+                  
+  
+                
+                  <label>Item Name</label>
+                  <input type="text" formControlName="ItemName" placeholder="Enter Item Name" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.ItemName.errors }" />
+                  <div *ngIf="submitted && f.ItemName.errors" class="invalid-feedback">
+                  <div *ngIf="f.ItemName.errors.required">Name is required</div>
+                  </div>
+                  <label>Price</label>
+                  <input type="number" formControlName="Price" placeholder="Enter Item Price" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.Price.errors }" />
+                  <div *ngIf="submitted && f.Price.errors" class="invalid-feedback">
+                  <div *ngIf="f.Price.errors.required"> Item Price is required</div>
+                  </div>
+                  <label>Stock Number</label>
+                  <input type="text" formControlName="StockNumber" placeholder="Enter Stock" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.StockNumber.errors }" />
+                  <div *ngIf="submitted && f.StockNumber.errors" class="invalid-feedback">
+                 <div *ngIf="f.StockNumber.errors.required"> Stock is required</div>
+                </div>
+                <label>Brief(optional)</label>
+                  <input type="text" formControlName="Description" placeholder="Enter brief about Item" class="form-control input-line full-width" />
+                <label>Remarks</label>
+                  <input type="text" formControlName="Remarks" placeholder="Enter remarks" class="form-control input-line full-width" />
+                </div>
+                <label>Image</label>
+                <input type="file"  (change)="fileEvent($event)">
+                <br><br>
+                <div *ngFor="let s of item">
+                  <div>
+                    <img src='assets/images/{{s.image}}' style="height:150px; width:150px;"><br>
+                    Name:{{s.ItemName}}
+                  </div>
+                </div>
+              <div class="text-center">
+                <button class="ghost-round full-width " >Add</button>
+                
+                <button class="ghost-round full-width " type="reset" (click)="onReset()" id=b2>Reset</button>
+              </div>
+                   
+            </form>
+          </div>
         </div>
-      </div>
-      </div> 
-
-
+        </div> 
+  

@@ -1,3 +1,11 @@
 .container{
     width: 50%;
+   
+    background-image: url('src/assets/images/h.jpg');
+ background-size: cover;
+    background-repeat: no-repeat;
+}
+#t1
+{
+    color:cornsilk;
 }
