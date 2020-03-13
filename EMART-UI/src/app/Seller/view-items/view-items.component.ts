@@ -64,10 +64,13 @@ Delete(ItemId:string)
   this.service.DeleteItem(ItemId).subscribe(res=>
     {
       console.log("Record Deleted");
+      window.location.reload();
     },err=>{
       console.log(err);                                                                   
     })
+   
 }
+
  Update()
  {
   this.item=new Items();

@@ -36,6 +36,7 @@ export class ViewCartComponent implements OnInit {
     this.service.RemoveCartItem(Id).subscribe(res=>{
       console.log('Item Removed from Cart');
       alert('Item Removed from Cart');
+      window.location.reload();
     })
   }
  
