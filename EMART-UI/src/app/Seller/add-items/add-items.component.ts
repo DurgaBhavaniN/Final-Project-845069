@@ -56,10 +56,11 @@ selectedFile : File = null;
   {
     this.submitted=true;
     if(this.additemForm.valid){
+       this.Add();
       alert('SUCCESS!! :-)\n\n')
       console.log(JSON.stringify(this.additemForm.value));
     }
-    this.Add();
+   
     
 }
 get f()

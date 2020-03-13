@@ -12,6 +12,7 @@ import { Cart } from 'src/app/Models/cart';
   styleUrls: ['./buy-product.component.css']
 })
 export class BuyProductComponent implements OnInit {
+  submitted=false;
   buyerform:FormGroup;
 item:Items;
 cart:Cart;
@@ -22,20 +23,34 @@ pobj:TransactionHistory;
   ngOnInit() {
 this.buyerform=this.formbuilder.group({
   transactionType:[''],
-  cardNumber:['',Validators.required],
-  cvv:['',Validators.required],
-  edate:['',Validators.required],
-  name:['',Validators.required],
+  cardNumber:['',[Validators.required,Validators.pattern('^[0-9]{11}$')]],
+  cvv:['',[Validators.required,Validators.pattern('^[0-9]{3}$')]],
+  edate:['',[Validators.required,Validators.pattern('^[0-9]{2}$')]],
+  name:['',[Validators.required,Validators.pattern('^[a-zA-Z]{3,15}')]],
   dateTime:['',Validators.required],
-  numberOfItems:['',Validators.required],
+  numberOfItems:['',[Validators.required,Validators.pattern('^[0-9]+$')]],
   remarks:['']
 })
-this.cart=JSON.parse(localStorage.getItem('cart'));
+this.cart=JSON.parse(localStorage.getItem('item'));
 console.log(this.cart);
 console.log(this.cart.itemId);
   }
-onSubmit()
+  get f()
 {
+  return this.buyerform.controls;
+}
+onSubmit()
+  {
+    this.submitted=true;
+    if(this.buyerform.valid){
+       this.Purchase();
+      alert('SUCCESS!! :-)\n\n')
+      console.log(JSON.stringify(this.buyerform.value));
+    }
+  }
+Purchase()
+{
+
   this.pobj=new TransactionHistory();
   this.pobj.id='T'+Math.round(Math.random()*999);
   this.pobj.transactionId=this.pobj.id;
@@ -60,7 +75,7 @@ CheckItem()
 let itemid=this.cart.itemId;
 console.log(itemid);
 let bid=localStorage.getItem('buyerId');
-this.service.CheckCartItems(itemid,bid).subscribe(res=>{
+this.service.CheckCartItems(bid,itemid).subscribe(res=>{
   this.status=res;
   console.log(this.status);
   if(this.status==true){

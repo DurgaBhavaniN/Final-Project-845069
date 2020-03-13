@@ -44,7 +44,7 @@ item:Seller;
   {
     this.submitted=true;
     if(this.registerForm.valid){
-      alert('Registration Success!! :-)\n\n')
+      alert('SUCCESS!! :-)\n\n')
       console.log(JSON.stringify(this.registerForm.value));
     }
     this.Add();

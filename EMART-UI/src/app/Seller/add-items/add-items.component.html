@@ -24,16 +24,19 @@
                   <input type="text" formControlName="ItemName" placeholder="Enter Item Name" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.ItemName.errors }" />
                   <div *ngIf="submitted && f.ItemName.errors" class="invalid-feedback">
                   <div *ngIf="f.ItemName.errors.required">Name is required</div>
+                  <div *ngIf="f.ItemName.errors.pattern">Enter a valid Name</div>
                   </div>
                   <label>Price</label>
-                  <input type="number" formControlName="Price" placeholder="Enter Item Price" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.Price.errors }" />
+                  <input type="text" formControlName="Price" placeholder="Enter Item Price" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.Price.errors }" />
                   <div *ngIf="submitted && f.Price.errors" class="invalid-feedback">
                   <div *ngIf="f.Price.errors.required"> Item Price is required</div>
+                  <div *ngIf="f.Price.errors.pattern">  Price should be in numbers </div>
                   </div>
                   <label>Stock Number</label>
                   <input type="text" formControlName="StockNumber" placeholder="Enter Stock" class="form-control input-line full-width" [ngClass]="{ 'is-invalid': submitted && f.StockNumber.errors }" />
                   <div *ngIf="submitted && f.StockNumber.errors" class="invalid-feedback">
                  <div *ngIf="f.StockNumber.errors.required"> Stock is required</div>
+                 <div *ngIf="f.StockNumber.errors.pattern"> Stock Number should be in numbers</div>
                 </div>
                 <label>Brief(optional)</label>
                   <input type="text" formControlName="Description" placeholder="Enter brief about Item" class="form-control input-line full-width" />
@@ -43,12 +46,12 @@
                 <label>Image</label>
                 <input type="file"  (change)="fileEvent($event)">
                 <br><br>
-                <div *ngFor="let s of item">
+                <!-- <div *ngFor="let s of item">
                   <div>
                     <img src='assets/images/{{s.image}}' style="height:150px; width:150px;"><br>
                     Name:{{s.ItemName}}
                   </div>
-                </div>
+                </div> -->
               <div class="text-center">
                 <button class="ghost-round full-width " >Add</button>
                 

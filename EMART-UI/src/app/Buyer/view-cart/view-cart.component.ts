@@ -24,10 +24,10 @@ export class ViewCartComponent implements OnInit {
     }
     ngOnInit() {
     }
-  Buy(item1:Cart){
+  Buy(item1:Items){
         console.log(item1);
-        this.cart=item1;
-        localStorage.setItem('cart',JSON.stringify(this.cart));
+        this.item=item1;
+        localStorage.setItem('item',JSON.stringify(this.item));
         this.route.navigateByUrl('/buyer/buyproduct');
   }
   Remove(Id:string)
