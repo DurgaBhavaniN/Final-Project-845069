@@ -11,6 +11,7 @@ namespace Emart.BuyerService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class BuyerController : ControllerBase
     {
 
@@ -136,7 +137,7 @@ namespace Emart.BuyerService.Controllers
             }
         }
         [HttpGet]
-        [Route("ViewCart/{bid}")]
+        [Route("ViewCart/{bid}/{iid}")]
         public IActionResult ViewCart(string bid,string iid)
         {
             try

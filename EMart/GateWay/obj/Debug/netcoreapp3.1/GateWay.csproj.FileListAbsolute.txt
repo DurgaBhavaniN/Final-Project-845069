@@ -101,5 +101,3 @@ D:\Final-Project-DurgaBhavani-845069\EMart\GateWay\bin\Debug\netcoreapp3.1\ru\Mi
 D:\Final-Project-DurgaBhavani-845069\EMart\GateWay\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Final-Project-DurgaBhavani-845069\EMart\GateWay\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Final-Project-DurgaBhavani-845069\EMart\GateWay\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Final-Project-DurgaBhavani-845069\EMart\GateWay\obj\Debug\netcoreapp3.1\GateWay.MvcApplicationPartsAssemblyInfo.cs
-D:\Final-Project-DurgaBhavani-845069\EMart\GateWay\obj\Debug\netcoreapp3.1\GateWay.MvcApplicationPartsAssemblyInfo.cache

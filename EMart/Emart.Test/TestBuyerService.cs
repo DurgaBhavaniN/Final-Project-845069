@@ -44,10 +44,10 @@ namespace Emart.Test
         {
             _repo.BuyItem(new TransactionHistory()
                 {
-                     Id="T518",
+                     Id="T548",
                      BuyerId="3",
                 SellerId = "1",
-                TransactionId = "T928",
+                TransactionId = "T548",
                 ItemId = "I89",
                 NumberOfItems = "2",
                 DateTime = DateTime.Now,
@@ -91,8 +91,8 @@ BuyerId="B4"
         [Description("Test DeleteCartItems()")]
         public void TestDeleteCartItems()
         {
-            _repo.DeleteCartItems("C325");
-            var result = _repo.GetCartItem("C325");
+            _repo.DeleteCartItems("C308");
+            var result = _repo.GetCartItem("C308");
 
             Assert.Null(result);
         }

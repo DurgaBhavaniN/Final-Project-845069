@@ -22,8 +22,8 @@ namespace Emart.Test
         {
             _repo.AddCategory(new Category()
             {
-                CategoryId="C365",
-                CategoryName="HomeAppliances",
+                CategoryId="C366",
+                CategoryName="Appliances",
                 BriefDetails="BestQuality"
             });
             var result = _repo.GetCatById("C365");
@@ -35,39 +35,39 @@ namespace Emart.Test
         {
             _repo.AddSubCategory(new SubCategory()
             {
-                SubcategoryId="SC27",
-                SubcategoryName="Furniture",
-                CategoryId="C365",
-                BriefDetails="Best",
-                Gst="12"
+                SubcategoryId="SC28",
+                SubcategoryName="Chairs",
+                CategoryId="C366",
+                BriefDetails="Best quality",
+                Gst="15"
             });
-            var result = _repo.GetSCatById("SC27");
+            var result = _repo.GetSCatById("SC28");
             Assert.IsNotNull(result);
         }
         [Test]
         [Description("Test DeleteCategory")]
         public void TestDeleteCategory()
         {
-            _repo.DeleteCategory("C365");
-            var result= _repo.GetCatById("C365");
+            _repo.DeleteCategory("C316");
+            var result= _repo.GetCatById("C316");
             Assert.Null(result);
         }
         [Test]
         [Description("Test DeleteSubCategory")]
         public void TestDeleteSubCategory()
         {
-            _repo.DeleteSubCategory("SC27");
-            var result = _repo.GetSCatById("SC27");
+            _repo.DeleteSubCategory("SC28");
+            var result = _repo.GetSCatById("SC28");
             Assert.Null(result);
         }
         [Test]
         [Description("Test UpdateCategory")]
         public void TestUpdateCategory()
         {
-            Category c = _repo.GetCatById("C365");
+            Category c = _repo.GetCatById("C366");
             c.BriefDetails = "BestQuality";
             _repo.UpdateCategory(c);
-            Category c1 = _repo.GetCatById("C365");
+            Category c1 = _repo.GetCatById("C366");
             Assert.AreSame(c, c1);
         }
         [Test]
@@ -84,7 +84,7 @@ namespace Emart.Test
         [Description("Test GetCatById")]
         public void TestGetCatById()
         {
-            var result = _repo.GetCatById("C365");
+            var result = _repo.GetCatById("C366");
             Assert.IsNotNull(result);
         }
         [Test]

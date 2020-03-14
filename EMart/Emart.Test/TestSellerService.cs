@@ -30,7 +30,7 @@ namespace Emart.Test
         public void TestEditProfile()
         {
             Seller s = _repo.GetProfile("3");
-            s.Gstin = "14";
+            s.Gstin = "17";
             _repo.EditProfile(s);
             Seller s1 = _repo.GetProfile("3");
             Assert.AreSame(s, s1);
@@ -42,41 +42,41 @@ namespace Emart.Test
             _repo1.AddItem(new Items()
             {
                 SellerId="2",
-                ItemId="I98",
+                ItemId="I21",
                 CategoryId="C63",
                 SubcategoryId="SC26",
-                Price="14000",
-                ItemName="LG",
+                Price="17000",
+                ItemName="samsung",
                 Description="more lifetime",
-                StockNumber="3",
+                StockNumber="4",
                 Remarks="1",
                 Image="headset.jpg"
             });
-            var result = _repo1.GetItem("I98");
+            var result = _repo1.GetItem("I21");
             Assert.NotNull(result);
         }
         [Test]
         [Description("Test GetItem()")]
         public void TestGetItem()
         {
-            var result = _repo1.GetItem("I98");
+            var result = _repo1.GetItem("I32");
             Assert.NotNull(result);
         }
         [Test]
         [Description("Test UpdateItem()")]
         public void TestUpdateItem()
         {
-            Items i = _repo1.GetItem("I98");
-            i.Description = "High Battery";
-            Items i1 = _repo1.GetItem("I98");
+            Items i = _repo1.GetItem("I89");
+            i.Description = "Best quality";
+            Items i1 = _repo1.GetItem("I89");
             Assert.AreSame(i, i1);
         }
         [Test]
         [Description("Test DeleteItem()")]
         public void TestDeleteItem()
         {
-            _repo1.DeleteItem("I98");
-            var result = _repo1.GetItem("I98");
+            _repo1.DeleteItem("I21");
+            var result = _repo1.GetItem("I21");
             Assert.Null(result);
         }
         [Test]
